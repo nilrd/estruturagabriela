@@ -109,22 +109,22 @@ function App() {
 
   const benefits = [
     {
-      icon: <EyeOff className="w-8 h-8 text-green-500" />,
+      icon: <EyeOff className="w-8 h-8 text-yellow-400" />,
       title: "100% Anônimo",
       description: "Venda sem aparecer, sem gravar vídeos, sem exposição pessoal"
     },
     {
-      icon: <Zap className="w-8 h-8 text-blue-500" />,
+      icon: <Zap className="w-8 h-8 text-yellow-400" />,
       title: "Automático",
       description: "Sistema que trabalha 24h por dia, mesmo enquanto você dorme"
     },
     {
-      icon: <DollarSign className="w-8 h-8 text-yellow-500" />,
+      icon: <DollarSign className="w-8 h-8 text-yellow-400" />,
       title: "Baixo Investimento",
       description: "Comece com pouco dinheiro e escale seus resultados rapidamente"
     },
     {
-      icon: <Users className="w-8 h-8 text-purple-500" />,
+      icon: <Users className="w-8 h-8 text-yellow-400" />,
       title: "Para Iniciantes",
       description: "Método desenvolvido especialmente para quem está começando do zero"
     }
@@ -198,11 +198,11 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-900 text-white">
       {/* Header/Hero Section */}
       <section className="relative overflow-hidden hero-gradient min-h-screen flex items-center">
         <div className="absolute inset-0 hero-overlay"></div>
-        <div className="relative container mx-auto px-4 py-16 text-center text-white">
+        <div className="relative container mx-auto px-4 py-16 text-center">
           <div className="fade-in-up">
             <Badge className="mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-lg px-6 py-3 rounded-full shadow-lg floating-animation">
               🔥 MÉTODO MAIS ATUALIZADO DE 2025
@@ -242,8 +242,8 @@ function App() {
                   loop 
                   playsInline
                   className="w-full h-full object-cover"
+                  src={notebookVideo}
                 >
-                  <source src={notebookVideo} type="video/mp4" />
                   Seu navegador não suporta vídeos HTML5.
                 </video>
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
@@ -257,7 +257,7 @@ function App() {
 
             <Button 
               onClick={() => window.open("https://pay.kiwify.com.br/CmsPj6t", "_blank")}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-xl md:text-2xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-6 btn-pulse"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold text-xl md:text-2xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 mb-6 btn-pulse"
             >
               🚀 QUERO ATIVAR MINHA MÁQUINA DE VENDAS AGORA
               <ArrowRight className="ml-2 w-6 h-6" />
@@ -272,39 +272,39 @@ function App() {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className={`py-20 bg-gray-50 ${isVisible.benefits ? 'fade-in-up' : ''}`}>
+      <section id="benefits" className={`py-20 bg-gray-800 text-white ${isVisible.benefits ? 'fade-in-up' : ''}`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
             A Estrutura Completa para Você Faturar no Automático, Sem Aparecer e Com Investimento Mínimo
           </h2>
           
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-xl mb-6 leading-relaxed text-gray-700">
+            <p className="text-xl mb-6 leading-relaxed text-gray-300">
               Se você está começando agora ou já tentou de tudo mas ainda não conseguiu destravar seus resultados no digital, 
               o Start Digital é a solução definitiva que você precisa.
             </p>
-            <p className="text-xl mb-6 leading-relaxed text-gray-700">
+            <p className="text-xl mb-6 leading-relaxed text-gray-300">
               Desenvolvido para afiliados iniciantes ou travados, ele une produtos validados, estratégias atualizadas e automações reais 
               para você vender todos os dias — mesmo sem aparecer, sem gravar vídeos e com pouco investimento.
             </p>
-            <p className="text-2xl font-bold text-red-600 mb-6">
+            <p className="text-2xl font-bold text-yellow-400 mb-6">
               Essa é a sua chance de virar o jogo!
             </p>
-            <p className="text-xl mb-6 leading-relaxed text-gray-700">
+            <p className="text-xl mb-6 leading-relaxed text-gray-300">
               Chega de depender de sorte, promessas vagas ou conteúdos genéricos.
             </p>
-            <p className="text-xl leading-relaxed text-gray-700">
+            <p className="text-xl leading-relaxed text-gray-300">
               Com o Start Digital, você constrói uma estrutura real de vendas e tem em mãos o que precisa para começar a faturar de forma simples, anônima e escalável.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-6 card-hover border-0 shadow-lg">
+              <Card key={index} className="text-center p-6 bg-gray-700 border-0 shadow-lg">
                 <CardContent className="pt-6">
                   <div className="mb-4 flex justify-center">{benefit.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
+                  <p className="text-gray-300">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -313,7 +313,7 @@ function App() {
           <div className="text-center">
             <Button 
               onClick={() => window.open("https://pay.kiwify.com.br/CmsPj6t", "_blank")}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-xl px-10 py-4 rounded-full shadow-xl btn-pulse"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold text-xl px-10 py-4 rounded-full shadow-xl btn-pulse"
             >
               QUERO COMEÇAR AGORA
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -336,7 +336,7 @@ function App() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="testimonial-card p-6 card-hover">
+                <Card key={index} className="testimonial-card p-6 bg-gray-800 border border-yellow-400/20">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
                       <img 
@@ -364,21 +364,21 @@ function App() {
       </section>
 
       {/* Modules Section */}
-      <section id="modules" className={`py-20 bg-white ${isVisible.modules ? 'fade-in-up' : ''}`}>
+      <section id="modules" className={`py-20 bg-gray-900 text-white ${isVisible.modules ? 'fade-in-up' : ''}`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             O QUE VOCÊ VAI APRENDER NO START DIGITAL?
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {modules.map((module, index) => (
-              <Card key={index} className={`module-card p-6 card-hover border-0 shadow-lg bg-gradient-to-br ${module.color}`}>
-                <CardContent className="pt-6 text-white">
-                  <div className="mb-4 flex justify-center text-white">
+              <Card key={index} className={`module-card p-6 bg-gray-800 border-0 shadow-lg`}>
+                <CardContent className="pt-6">
+                  <div className={`mb-4 flex justify-center text-white bg-gradient-to-r ${module.color} p-3 rounded-full w-max mx-auto`}>
                     {module.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-center">{module.title}</h3>
-                  <p className="text-white/90 text-sm leading-relaxed">{module.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-center text-yellow-400">{module.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{module.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -387,17 +387,17 @@ function App() {
       </section>
 
       {/* Unique Features Section */}
-      <section id="features" className={`py-20 bg-gray-50 ${isVisible.features ? 'fade-in-up' : ''}`}>
+      <section id="features" className={`py-20 bg-gray-800 text-white ${isVisible.features ? 'fade-in-up' : ''}`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             POR QUE O START DIGITAL É ÚNICO?
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {uniqueFeatures.map((feature, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-md card-hover">
-                <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 font-medium">{feature}</p>
+              <div key={index} className="flex items-start gap-4 p-6 bg-gray-700 rounded-lg shadow-md">
+                <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                <p className="text-gray-300 font-medium">{feature}</p>
               </div>
             ))}
           </div>
@@ -405,10 +405,10 @@ function App() {
       </section>
 
       {/* Guarantee Section */}
-      <section id="guarantee" className={`py-20 bg-white ${isVisible.guarantee ? 'fade-in-up' : ''}`}>
+      <section id="guarantee" className={`py-20 bg-gray-900 text-white ${isVisible.guarantee ? 'fade-in-up' : ''}`}>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="guarantee-badge text-white p-8 rounded-2xl shadow-2xl mb-12">
+            <div className="guarantee-badge text-black p-8 rounded-2xl shadow-2xl mb-12">
               <Shield className="w-16 h-16 mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 GARANTIA INCONDICIONAL DE 7 DIAS
@@ -430,7 +430,7 @@ function App() {
               ⏰ OFERTA ESPECIAL POR TEMPO LIMITADO!
             </Badge>
             
-            <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
+            <div className="max-w-2xl mx-auto bg-gray-800/50 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-yellow-400/20">
               <div className="mb-6">
                 <p className="text-white text-2xl mb-2">De <span className="line-through">R$347</span> por apenas</p>
                 <div className="price-highlight text-6xl md:text-8xl font-bold mb-4">
@@ -439,7 +439,7 @@ function App() {
                 <p className="text-white text-xl">ou 12x de R$20,37</p>
               </div>
 
-              <div className="countdown-timer text-white p-4 rounded-lg mb-8">
+              <div className="countdown-timer text-black p-4 rounded-lg mb-8">
                 <p className="text-lg mb-2">Oferta expira em:</p>
                 <div className="flex justify-center gap-4 text-2xl font-bold">
                   <div className="bg-white/20 px-3 py-2 rounded">
@@ -456,7 +456,7 @@ function App() {
 
               <Button 
                 onClick={() => window.open("https://pay.kiwify.com.br/CmsPj6t", "_blank")}
-                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-2xl px-12 py-6 rounded-full shadow-2xl btn-pulse mb-6"
+                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold text-2xl px-12 py-6 rounded-full shadow-2xl btn-pulse mb-6"
               >
                 🚀 GARANTIR MINHA VAGA AGORA
                 <ArrowRight className="ml-2 w-6 h-6" />
@@ -472,9 +472,9 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className={`py-20 bg-gray-50 ${isVisible.faq ? 'fade-in-up' : ''}`}>
+      <section id="faq" className={`py-20 bg-gray-800 text-white ${isVisible.faq ? 'fade-in-up' : ''}`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             PERGUNTAS FREQUENTES
           </h2>
           
@@ -502,10 +502,10 @@ function App() {
                   answer: "Sim! Você terá acesso ao grupo de suporte exclusivo, mentoria mensal ao vivo e atendimento direto com a equipe."
                 }
               ].map((faq, index) => (
-                <Card key={index} className="p-6 card-hover">
+                <Card key={index} className="p-6 bg-gray-700 border-0 shadow-lg">
                   <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold mb-3 text-gray-800">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
+                    <h3 className="text-xl font-bold mb-3 text-yellow-400">{faq.question}</h3>
+                    <p className="text-gray-300">{faq.answer}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -528,7 +528,7 @@ function App() {
             
             <Button 
               onClick={() => window.open("https://pay.kiwify.com.br/CmsPj6t", "_blank")}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-2xl px-16 py-8 rounded-full shadow-2xl btn-pulse mb-8"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold text-2xl px-16 py-8 rounded-full shadow-2xl btn-pulse mb-8"
             >
               🚀 SIM, QUERO COMEÇAR AGORA!
               <ArrowRight className="ml-2 w-8 h-8" />
@@ -543,7 +543,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
             Todos os direitos reservados – Ane Peonia – Novo Start Digital
